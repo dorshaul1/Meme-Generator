@@ -40,7 +40,7 @@ function onInputText() {
     else if (gLineCount === 1)drawText(text, 150, 350)
     else if (gLineCount === 2)drawText(text, 150, 200)
     gLineCount++
-    text = ''
+    elTextInput.value = ''
 }
 
 function showMemeEditor(id){
