@@ -1,16 +1,26 @@
 'use strict'
 
-var gElCanvas;
-var gCtx;
+var gElCanvas = document.querySelector('#meme-canvas');
+var gCtx = gElCanvas.getContext('2d');
 
-function initCanvas() {
-    gElCanvas = document.querySelector('#meme-canvas');
-    gCtx = gElCanvas.getContext('2d');
-    resizeCanvas()
+function getCanvas(){
+    return gElCanvas
 }
 
-function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container');
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+function getCtx(){
+    return gCtx
+}
+
+function drawImg(Img) {
+    gCtx.drawImage(Img, 0, 0, gElCanvas.width, gElCanvas.height)
+}
+
+function drawText(text, x, y) {
+    gCtx.lineWidth = 2
+    gCtx.strokeStyle = 'red'
+    gCtx.fillStyle = 'white'
+    gCtx.font = '30px Arial'
+    gCtx.textAlign = 'center'
+    gCtx.fillText(text, x, y)
+    gCtx.strokeText(text, x, y)
 }

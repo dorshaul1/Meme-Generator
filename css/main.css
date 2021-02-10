@@ -1,16 +1,17 @@
 /* fonts */
-@font-face{
+@font-face {
     font-family: noto;
     src: url(../fonts/Noto_Sans/NotoSansJP-Regular.otf);
 
 }
-@font-face{
+
+@font-face {
     font-family: quite-magical;
     src: url(../fonts/quite-magical-font/QuiteMagicalRegular-8VA2.ttf);
 }
 
 /* basics */
-*{
+* {
     box-sizing: border-box;
     font-family: noto;
 }
@@ -19,13 +20,22 @@ body {
     margin: 0;
 }
 
-main{
-    padding-top: 0.6%;
+main {
+    padding: 0.6% 0;
+}
+
+li {
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+li:hover {
+    text-decoration: underline;
 }
 
 /* nav */
 
-header{
+header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -35,20 +45,44 @@ header{
     padding: 0 5%;
 }
 
-header .logo{
+header .logo {
     font-family: quite-magical;
-    font-size: 30px;
+    font-size: 40px;
 }
 
-header nav{
-width: 30%;
+header nav {
+    width: 30%;
+    /* box-sizing: content-box; */
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+}
+
+.image{
+    display: inline;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 /* meme gallery */
 
+.gallery-container {
+    background-color: rgb(243, 240, 240);
+    height: 80vh;
+    /* width: 100%; */
+    border-radius: 20px;
+    padding: 0 3%;
+    margin: 0 1%;
+}
+
 /* meme editor */
 
-.meme-editor-container{
+.meme-editor-container {
+    /* display: none; */
     background-color: rgb(243, 240, 240);
     height: 80vh;
     width: 100%;
@@ -57,16 +91,17 @@ width: 30%;
     margin: 0 1%;
 }
 
-.canvas-container{
+.canvas-container {
     height: 80%;
     width: 50%;
     background-color: white;
     border-radius: 20px;
+    /* color: rgb(255, 235, 235); */
 }
 
 /* helpers */
 
-.flex{
+.flex {
     display: flex;
 }
 
@@ -104,4 +139,20 @@ width: 30%;
 
 .flex.grow {
     flex-grow: 1;
+}
+
+.shown {
+    display: block;
+}
+
+.shown-childs>* {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-childs>* {
+    display: none;
 }

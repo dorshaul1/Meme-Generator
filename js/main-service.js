@@ -8,12 +8,28 @@ var gKeywords = {
 }
 
 var gImgs = [{
-    id: 1,
-    url: 'img/9.jpg',
-    keywords: ['happy']
-}];
+        id: 1,
+        url: 'img/9.jpg',
+        keywords: ['happy']
+    },
+    {
+        id: 2,
+        url: 'img/5.jpg',
+        keywords: ['happy']
+    }, 
+    {
+        id: 3,
+        url: 'img/8.jpg',
+        keywords: ['happy']
+    },
+
+];
 
 var gMemeId = 1
+
+function getImages() {
+    return gImgs
+}
 
 function createMeme() {
     var gMeme = {
@@ -27,9 +43,5 @@ function createMeme() {
             borderColor: 'black'
         }]
     }
-    gMemeId ++
-}
-
-function createMemes() {
-
+    gMemeId++
 }
