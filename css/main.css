@@ -2,6 +2,11 @@
 @font-face{
     font-family: noto;
     src: url(../fonts/Noto_Sans/NotoSansJP-Regular.otf);
+
+}
+@font-face{
+    font-family: quite-magical;
+    src: url(../fonts/quite-magical-font/QuiteMagicalRegular-8VA2.ttf);
 }
 
 /* basics */
@@ -12,4 +17,91 @@
 
 body {
     margin: 0;
+}
+
+main{
+    padding-top: 0.6%;
+}
+
+/* nav */
+
+header{
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(158, 57, 57);
+    color: white;
+    padding: 0 5%;
+}
+
+header .logo{
+    font-family: quite-magical;
+    font-size: 30px;
+}
+
+header nav{
+width: 30%;
+}
+
+/* meme gallery */
+
+/* meme editor */
+
+.meme-editor-container{
+    background-color: rgb(243, 240, 240);
+    height: 80vh;
+    width: 100%;
+    border-radius: 20px;
+    padding: 0 3%;
+    margin: 0 1%;
+}
+
+.canvas-container{
+    height: 80%;
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* helpers */
+
+.flex{
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.flex.grow {
+    flex-grow: 1;
 }

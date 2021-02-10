@@ -8,13 +8,36 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body onload="onInit()">
+    <header class="flex">
+        <div class="logo">Meme Generator</div>
+        <nav>
+            <ul class="flex clean-list space-between">
+                <li>Gallery</li>
+                <li>Memes</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
 
+    <main class="gallery center" hidden>
+        <div class="gallery-container">
+        </div>
+    </main>
+
+    <main class="meme-editor center">
+        <div class="meme-editor-container flex align-center">
+            <div class="canvas-container">
+                <canvas id="meme-canvas" width="400" height="400" style="outline:1px solid green"></canvas>
+              </div>
+        </div>
+    </main>
 
 
     <script src="js/utils.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/main-service.js"></script>
+    <script src="js/canvas-services.js"></script>
     <script src="js/main-controler.js"></script>
 </body>
 
