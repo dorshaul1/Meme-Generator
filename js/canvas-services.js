@@ -43,11 +43,11 @@ function drawImg(currImage) {
 //     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 // }
 
-function drawText(text, x, y) {
+function drawText(text,fill,border, x, y) {
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'red'
-    gCtx.fillStyle = 'white'
-    gCtx.font = '30px Arial'
+    gCtx.strokeStyle = border
+    gCtx.fillStyle = fill
+    gCtx.font = '40px Arial'
     gCtx.textAlign = 'center'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)

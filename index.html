@@ -29,10 +29,22 @@
                 <canvas id="meme-canvas" width="400" height="400" style="outline:1px solid black"></canvas>
                 <img class="meme-img" hidden>
             </div>
-            
-            <div class="meme-settings" >
-                <input id="text" type="text" placeholder="Enter Text">
-                <button class="add-text" onclick="onInputText()">+</button>
+
+            <!-- <form> -->
+                <div class="meme-settings flex column">
+                    <div class="text">
+                        <input id="text" type="text" placeholder="Enter Text">
+                        <button id="text-btn" class="add-text" onclick="onInputText()">+</button>
+                    </div>
+                    <div class="fill-color">
+                        <h4>Fill color</h4>
+                        <input type="color" id="fill-color">
+                    </div>
+                    <div class="border-color">
+                        <h4>Border color</h4>
+                        <input type="color" id="border-color">
+                    </div>
+            <!-- </form> -->
             </div>
         </section>
     </main>
