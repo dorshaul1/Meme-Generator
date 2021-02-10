@@ -5,13 +5,14 @@ function onInit() {
     renderGalleryImages()
 }
 
-// function navToGallery() {
-//     var elGallery = document.querySelector('.gallery-container')
-//     // console.log('elGallery:', elGallery)
-//     var elMemeEditor = document.querySelector('.meme-editor-container')
-//     elGallery.hidden = 'flex'
-//     elMemeEditor.style.display = 'none'
-// }
+function navToGallery() {
+    var elGallery = document.querySelector('.gallery-container')
+    var elMemeEditor = document.querySelector('.meme-editor-container')
+    elGallery.classList.remove('hidden')
+    elGallery.classList.remove('hidden-childs')
+    elMemeEditor.classList.add('hidden')
+    elMemeEditor.classList.add('hidden-childs')
+}
 
 function renderGalleryImages() {
     let images = getImages()
