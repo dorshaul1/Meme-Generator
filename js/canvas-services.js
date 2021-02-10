@@ -8,12 +8,12 @@ function getCanvas() {
     return gElCanvas
 }
 
-function setCanvas(newCanvas){
-    gElCanvas = newCanvas
-}
-function setCtx(newCtx){
-    gCtx = newCtx
-}
+// function setCanvas(newCanvas){
+//     gElCanvas = newCanvas
+// }
+// function setCtx(newCtx){
+//     gCtx = newCtx
+// }
 
 function getCtx() {
     return gCtx

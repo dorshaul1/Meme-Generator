@@ -14,7 +14,6 @@ function navToGallery() {
     elGallery.classList.remove('hidden-childs')
     elMemeEditor.classList.add('hidden')
     elMemeEditor.classList.add('hidden-childs')
-    // clearCanvas()
 }
 
 function renderGalleryImages() {
@@ -35,8 +34,8 @@ function renderMemeEditor(img){
 function onInputText() {
     var elTextInput = document.querySelector('#text')
     var text = elTextInput.value
-    // initCanvas()
-    drawText(text, 40, 40)
+    initCanvas()
+    drawText(text, 100, 100)
 }
 
 function showMemeEditor(id){
