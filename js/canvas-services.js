@@ -1,6 +1,6 @@
 'use strict'
 
-var gElCanvas = document.querySelector('#meme-canvas');
+var gElCanvas = document.querySelector('#meme-canvas')
 var gCtx = gElCanvas.getContext('2d');
 
 function getCanvas(){
@@ -11,9 +11,23 @@ function getCtx(){
     return gCtx
 }
 
-function drawImg(Img) {
-    gCtx.drawImage(Img, 0, 0, gElCanvas.width, gElCanvas.height)
-}
+function drawImg(currImage) {
+    // console.dir( currImage)
+    // var image = 'img/2.jpg'
+    // console.log('image:', image)
+    // console.log('gCtx:', gCtx)
+    const img = currImage
+    img.src = currImage.src;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+    }}
+// function drawImg(img) {
+//     console.dir( img)
+//     // var image = 'img/2.jpg'
+//     // console.log('image:', image)
+//     // console.log('gCtx:', gCtx)
+//     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+// }
 
 function drawText(text, x, y) {
     gCtx.lineWidth = 2

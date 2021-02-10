@@ -100,9 +100,9 @@ img{
 }
 
 .canvas-container {
-    height: 80%;
-    width: 50%;
-    background-color: white;
+    /* height: 80%;
+    width: 50%; */
+    /* background-color: white; */
     border-radius: 20px;
     /* color: rgb(255, 235, 235); */
 }

@@ -3,10 +3,13 @@
 function initCanvas() {
     getCanvas()
     getCtx()
-    resizeCanvas()
+    // resizeCanvas()
     addListeners()
     renderCanvas()
-    onChooseImg()
+}
+
+function imgChoosen(CurrImg){
+    onChooseImg(CurrImg)
 }
 
 function addListeners() {
@@ -30,7 +33,9 @@ function renderCanvas() {
     ctx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function onChooseImg() {
-    const elImg = document.querySelector('.meme-img')
-    drawImg(elImg)
+function onChooseImg(img) {
+    console.log('img:', img)
+    // const elImg = document.querySelector('.meme-img')
+    // console.log('elImg:', elImg)
+    drawImg(img)
 }

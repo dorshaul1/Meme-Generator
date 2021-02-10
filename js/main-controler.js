@@ -1,7 +1,9 @@
 'use strict'
 
+var gCurrImg
+
 function onInit() {
-    initCanvas()
+    initCanvas(gCurrImg)
     renderGalleryImages()
 }
 
@@ -12,7 +14,7 @@ function navToGallery() {
     elGallery.classList.remove('hidden-childs')
     elMemeEditor.classList.add('hidden')
     elMemeEditor.classList.add('hidden-childs')
-    clearCanvas()
+    // clearCanvas()
 }
 
 function renderGalleryImages() {
@@ -25,9 +27,9 @@ function renderGalleryImages() {
 
 function renderMemeEditor(img){
     let elCanvasContainer = document.querySelector('.meme-img')
+    imgChoosen(elCanvasContainer)
+    // gCurrImg = elCanvasContainer
     elCanvasContainer.src = img.url
-    // let strHTML =  `<img src="${img.url}">`
-    // elCanvasContainer.innerHTML += strHTML
 }
 
 function onInputText() {
