@@ -24,7 +24,7 @@ function renderGalleryImages() {
 }
 
 function renderMemeEditor(img){
-    let elCanvasContainer = document.querySelector('.memeImg')
+    let elCanvasContainer = document.querySelector('.meme-img')
     elCanvasContainer.src = img.url
     // let strHTML =  `<img src="${img.url}">`
     // elCanvasContainer.innerHTML += strHTML

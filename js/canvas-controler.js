@@ -31,6 +31,6 @@ function renderCanvas() {
 }
 
 function onChooseImg() {
-    const elImg = document.querySelector('img')
+    const elImg = document.querySelector('.meme-img')
     drawImg(elImg)
 }
