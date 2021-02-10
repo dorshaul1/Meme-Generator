@@ -1,0 +1,15 @@
+/* fonts */
+@font-face{
+    font-family: noto;
+    src: url(../fonts/Noto_Sans/NotoSansJP-Regular.otf);
+}
+
+/* basics */
+*{
+    box-sizing: border-box;
+    font-family: noto;
+}
+
+body {
+    margin: 0;
+}
