@@ -1,6 +1,7 @@
 'use strict'
 
 var gCurrImg
+var gLineCount = 0
 
 function onInit() {
     initCanvas()
@@ -34,8 +35,12 @@ function renderMemeEditor(img){
 function onInputText() {
     var elTextInput = document.querySelector('#text')
     var text = elTextInput.value
-    initCanvas()
-    drawText(text, 100, 100)
+    // initCanvas()
+    if (gLineCount === 0)drawText(text, 150, 50)
+    else if (gLineCount === 1)drawText(text, 150, 350)
+    else if (gLineCount === 2)drawText(text, 150, 200)
+    gLineCount++
+    text = ''
 }
 
 function showMemeEditor(id){
