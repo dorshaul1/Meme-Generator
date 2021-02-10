@@ -1,31 +1,36 @@
 'use strict'
 
 var gMemes = []
+var gImgId = 1
+var gMemeId = 1
+var gImgsCount = 19
 
 var gKeywords = {
     'happy': 12,
     'funny puk': 1
 }
 
-var gImgs = [{
-        id: 1,
-        url: 'img/9.jpg',
-        keywords: ['happy']
-    },
-    {
-        id: 2,
-        url: 'img/5.jpg',
-        keywords: ['happy']
-    }, 
-    {
-        id: 3,
-        url: 'img/8.jpg',
-        keywords: ['happy']
-    },
+var gImgs = []
 
-];
+createImagesGallery()
 
-var gMemeId = 1
+function createImageGallery(url, keywords = null) {
+    var gImg = {
+        id: gImgId,
+        url,
+        keywords
+    }
+    gImgId++
+    gImgs.push(gImg)
+}
+
+function createImagesGallery() {
+
+    for (var i = 1; i < gImgsCount; i++){
+        var url = `img/${i}.jpg`
+        createImageGallery(url)
+    }
+}
 
 function getImages() {
     return gImgs
