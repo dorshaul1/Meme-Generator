@@ -3,7 +3,7 @@
 var gCurrImg
 
 function onInit() {
-    initCanvas(gCurrImg)
+    initCanvas()
     renderGalleryImages()
 }
 
@@ -35,7 +35,7 @@ function renderMemeEditor(img){
 function onInputText() {
     var elTextInput = document.querySelector('#text')
     var text = elTextInput.value
-    initCanvas()
+    // initCanvas()
     drawText(text, 40, 40)
 }
 

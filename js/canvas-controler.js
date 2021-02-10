@@ -3,9 +3,9 @@
 function initCanvas() {
     getCanvas()
     getCtx()
-    // resizeCanvas()
     addListeners()
     renderCanvas()
+    // onResizeCanvas()
 }
 
 function imgChoosen(CurrImg){
@@ -14,16 +14,14 @@ function imgChoosen(CurrImg){
 
 function addListeners() {
     window.addEventListener('resize', () => {
-        resizeCanvas()
+        onResizeCanvas()
         renderCanvas()
     })
 }
 
-function resizeCanvas() {
+function onResizeCanvas() {
     const elContainer = document.querySelector('.canvas-container');
-    var elCanvas = getCanvas()
-    elCanvas.width = elContainer.offsetWidth
-    elCanvas.height = elContainer.offsetHeight
+    resizeCanvas(elContainer)
     // renderCanvas()
 }
 
@@ -34,8 +32,5 @@ function renderCanvas() {
 }
 
 function onChooseImg(img) {
-    console.log('img:', img)
-    // const elImg = document.querySelector('.meme-img')
-    // console.log('elImg:', elImg)
     drawImg(img)
 }
