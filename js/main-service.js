@@ -50,3 +50,10 @@ function createMeme() {
     }
     gMemeId++
 }
+
+function findImageById(id){
+    var img = gImgs.find(image =>{
+        return image.id === id
+    })
+    return img
+}
