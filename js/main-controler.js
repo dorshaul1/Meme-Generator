@@ -12,6 +12,7 @@ function navToGallery() {
     elGallery.classList.remove('hidden-childs')
     elMemeEditor.classList.add('hidden')
     elMemeEditor.classList.add('hidden-childs')
+    clearCanvas()
 }
 
 function renderGalleryImages() {
@@ -23,9 +24,10 @@ function renderGalleryImages() {
 }
 
 function renderMemeEditor(img){
-    let elCanvasContainer = document.querySelector('.canvas-container')
-    let strHTML =  `<img src="${img.url}">`
-    elCanvasContainer.innerHTML += strHTML
+    let elCanvasContainer = document.querySelector('.memeImg')
+    elCanvasContainer.src = img.url
+    // let strHTML =  `<img src="${img.url}">`
+    // elCanvasContainer.innerHTML += strHTML
 }
 
 function onInputText() {

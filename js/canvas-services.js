@@ -24,3 +24,7 @@ function drawText(text, x, y) {
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
+
+function clearCanvas(){
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+}
