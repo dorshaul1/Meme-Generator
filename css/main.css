@@ -180,7 +180,7 @@ img {
 
 .align-left {
     grid-row: 3;
-    grid-column: 3;
+    grid-column: 5;
 }
 
 .align-center {
@@ -190,7 +190,7 @@ img {
 
 .align-right {
     grid-row: 3;
-    grid-column: 5;
+    grid-column: 3;
 }
 
 /* helpers */
