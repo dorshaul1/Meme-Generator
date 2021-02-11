@@ -143,10 +143,10 @@ function drawText() {
 
     if (gLinesCount === 2) {
         posX = 200
-        posY = gElCanvas.height - 50
+        posY = gElCanvas.height - 20
     } else if (gLinesCount === 3) {
         posX = 200
-        posY = gElCanvas.height - 150
+        posY = gElCanvas.height - 200
     }
         var currLine = meme.lines[gLinesCount-1]
 
