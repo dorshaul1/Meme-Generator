@@ -55,25 +55,31 @@ header nav {
     /* box-sizing: content-box; */
 }
 
-img{
+img {
     width: 100%;
     height: 100%;
     border-radius: 20px;
     /* background-color: white; */
 }
 
-.gallery-container img:hover{
+.gallery-container img:hover {
     opacity: 0.7;
     cursor: pointer;
 }
 
-.image{
+.image {
     display: inline;
     margin: 10px;
     width: 200px;
     height: 200px;
     border-radius: 25px;
     /* border: 4px solid black; */
+}
+
+.meme-settings button{
+cursor: pointer;
+width: 60px;
+height: 60px;
 }
 
 /* meme gallery */
@@ -107,6 +113,79 @@ img{
     /* color: rgb(255, 235, 235); */
 }
 
+.meme-settings {
+    background-color: rgb(226, 226, 226);
+    width: 60%;
+    height: 60vh;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 5px;
+    border-radius: 20px;
+}
+
+.text{
+    grid-column: 1/span 5;
+    width: 500px;
+    height: 30px;
+}
+
+.delete-btn{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.add-text{
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.switch-btn{
+    grid-row: 2;
+    grid-column: 4;
+}
+
+.impact{
+    grid-row: 4;
+    grid-column: 1/span 3; 
+    height: 30px; 
+    width: 200px;
+}
+
+.fill-color{
+    grid-row: 4;
+    grid-column: 4; 
+}
+
+.border-color{
+    grid-row: 4;
+    grid-column: 5; 
+}
+
+.font-size-plus{
+    grid-row: 3;
+    grid-column: 1; 
+}
+
+.font-size-minus{
+    grid-row: 3;
+    grid-column: 2; 
+}
+
+.align-left{
+    grid-row: 3;
+    grid-column: 3; 
+}
+
+.align-center{
+    grid-row: 3;
+    grid-column: 4; 
+}
+
+.align-right{
+    grid-row: 3;
+    grid-column: 5; 
+}
 /* helpers */
 
 .flex {
@@ -167,4 +246,17 @@ img{
 
 .hidden-childs>* {
     display: none;
+}
+
+.grid {
+    display: grid;
+}
+
+/* .column3 {
+    grid-column: 2/span 3;
+} */
+
+.grid-center{
+    justify-self: center;
+    align-self: center;
 }

@@ -2,14 +2,12 @@
 
 var gCurrImg
 var gLineCount = 0
-var choosenSettings={
-    text
-}
 
 function onInit() {
     initCanvas()
     renderGalleryImages()
     enableEnter()
+    gLineCount = 0
 }
 
 function navToGallery() {
@@ -19,6 +17,7 @@ function navToGallery() {
     elGallery.classList.remove('hidden-childs')
     elMemeEditor.classList.add('hidden')
     elMemeEditor.classList.add('hidden-childs')
+    onInit()
 }
 
 function renderGalleryImages() {

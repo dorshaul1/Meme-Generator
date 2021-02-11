@@ -3,7 +3,7 @@
 function initCanvas() {
     getCanvas()
     getCtx()
-    addListeners()
+    // addListeners()
     renderCanvas()
     // onResizeCanvas()
 }
