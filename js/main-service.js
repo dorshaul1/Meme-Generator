@@ -1,18 +1,39 @@
 'use strict'
 
-var gMemes = []
-var gImgId = 1
-var gMemeId = 1
-var gImgsCount = 19
+// var gLinesCount = 0
 
 var gKeywords = {
     'happy': 12,
     'funny puk': 1
 }
+var gImgs = [];
+var gImgId = 0
+var gImgsCount = 19
 
-var gImgs = []
 
-createImagesGallery()
+var gMeme = {
+    selectedImgId: 1,
+    selectedLineIdx: 0,
+    lines: []
+}
+
+function getImages() {
+    return gImgs
+}
+
+function getMeme() {
+    return gMeme
+}
+
+function addLine(txt, fillColor, borderColor, textAlign) {
+    let newLine = {
+        txt,
+        fillColor,
+        borderColor,
+        textAlign
+    }
+    gMeme.lines.push(newLine)
+}
 
 function createImageGallery(url, keywords = null) {
     var gImg = {
@@ -24,36 +45,12 @@ function createImageGallery(url, keywords = null) {
     gImgs.push(gImg)
 }
 
+createImagesGallery()
+
 function createImagesGallery() {
 
-    for (var i = 1; i < gImgsCount; i++){
+    for (var i = 1; i < gImgsCount; i++) {
         var url = `img/${i}.jpg`
         createImageGallery(url)
     }
-}
-
-function getImages() {
-    return gImgs
-}
-
-function createMeme() {
-    var gMeme = {
-        selectedImgId: gMemeId,
-        selectedLineIdx: 0,
-        lines: [{
-            txt: 'I never eat Falafel',
-            size: 20,
-            align: 'left',
-            color: 'white',
-            borderColor: 'black'
-        }]
-    }
-    gMemeId++
-}
-
-function findImageById(id){
-    var img = gImgs.find(image =>{
-        return image.id === id
-    })
-    return img
 }
