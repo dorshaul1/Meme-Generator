@@ -363,7 +363,7 @@ img {
         width: 250px;
         background-color: rgb(158, 57, 57);
         position: fixed;
-        padding: 0 50px;
+        padding: 70px 50px;
         right: 0;
         top: 0;
         transform: translateX(100%);
