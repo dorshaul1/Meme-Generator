@@ -13,6 +13,8 @@ var gImgsCount = 19
 
 var gMeme
 
+// var gLines = 0
+
 function getImages() {
     return gImgs
 }
@@ -25,19 +27,23 @@ function createMeme(id) {
     var meme = {
         selectedImgId: id,
         selectedLineIdx: 0,
+        // LinesCount: gLines,
         lines: []
     }
     gMeme = meme
 }
 
-function addLine(txt, fillColor, borderColor, textAlign) {
+function addLine(txt, fillColor, borderColor, textAlign, fontSize, font) {
     let newLine = {
         txt,
         fillColor,
         borderColor,
-        textAlign
+        textAlign,
+        fontSize,
+        font
     }
     gMeme.lines.push(newLine)
+    // gCurrLine ++
 }
 
 function createImageGallery(url, keywords = null) {
@@ -60,6 +66,6 @@ function createImagesGallery() {
     }
 }
 
-// function deleteLine(){
-
-// }
+function deleteLine(){
+    gMeme.lines.pop()
+}
