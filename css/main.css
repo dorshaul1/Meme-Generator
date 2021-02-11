@@ -76,7 +76,7 @@ img {
     /* border: 4px solid black; */
 }
 
-.meme-settings img{
+.meme-settings img {
     border-radius: 0;
 }
 
@@ -88,6 +88,20 @@ img {
     border-radius: 10px;
 }
 
+
+.nav-screen {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.349);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
 /* meme gallery */
 
 /* meme editor */
@@ -99,7 +113,6 @@ img {
     border-radius: 20px;
     /* padding: 0 3%; */
 }
-
 
 .meme-settings {
     background-color: rgb(226, 226, 226);
@@ -180,12 +193,20 @@ img {
     height: 40px;
     grid-row: 5;
     grid-column: 5;
-    background-color:rgb(198, 255, 198);
+    background-color: rgb(198, 255, 198);
     text-decoration: none;
     border-radius: 20px;
 }
 
 
+.burger-menu{
+    display: none;
+    cursor: pointer;
+    font-size: 40px;
+    border: none;
+    color: white;
+    background-color: transparent;
+}
 /* helpers */
 
 .flex {
@@ -261,9 +282,9 @@ img {
     align-self: center;
 }
 
-@media only screen and (max-width: 850px){
+@media only screen and (max-width: 850px) {
     .meme-settings {
-        width: 40%;    
+        width: 40%;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(7, 1fr);
     }
@@ -277,12 +298,12 @@ img {
         grid-row: 6;
         grid-column: 2/span 4;
     }
-    
+
     .fill-color {
         grid-row: 5;
         grid-column: 3;
     }
-    
+
     .border-color {
         grid-row: 5;
         grid-column: 4;
@@ -291,125 +312,154 @@ img {
     .align-left {
         grid-column: 4;
     }
-    
+
     .align-center {
         grid-column: 3;
     }
-    
+
     .align-right {
         grid-column: 2;
     }
-    
+
     .font-size-plus {
         grid-row: 4;
         grid-column: 4;
     }
-    
+
     .font-size-minus {
         grid-row: 4;
         grid-column: 3;
     }
+
     .download-btn {
-        grid-row: 7;        
+        grid-row: 7;
         grid-column: 4;
     }
-    
+
 }
 
-@media only screen and (max-width: 720px){
-.meme-editor-container{
-    flex-direction: column;
+@media only screen and (max-width: 720px) {
+    .meme-editor-container {
+        flex-direction: column;
+    }
+
+    .meme-settings {
+        height: 30%;
+        width: 80%;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    /* header{
+    position: fixed;
+} */
+
+.burger-menu{
+    display: block;
 }
+    .nav-list {
+        flex-direction: column;
+        height: 100%;
+        width: 250px;
+        background-color: rgb(158, 57, 57);
+        position: fixed;
+        padding: 0 50px;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: transform 0.6s;
+        z-index: 2;
+    }
 
-.meme-settings{
-    height: 30%;
-    width: 80%;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-}
+    .nav-list>* {
+        margin: 90px 0;
+    }
+
+    .nav-list.openNav {
+        transform: translateX(0)
+    }
+
+    .meme-settings button {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+    }
 
 
-.meme-settings button {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-}
+    .text {
+        grid-column: 1/span 4;
+        width: 80%;
+        height: 30px;
+    }
 
+    .delete-btn {
+        grid-row: 1;
+        grid-column: 6;
+    }
 
-.text {
-    grid-column: 1/span 4;
-    width: 80%;
-    height: 30px;
-}
+    .add-text {
+        grid-row: 1;
+        grid-column: 7;
+    }
 
-.delete-btn {
-    grid-row: 1;
-    grid-column: 6;
-}
+    .switch-btn {
+        grid-row: 1;
+        grid-column: 5;
+    }
 
-.add-text {
-    grid-row: 1;
-    grid-column: 7;
-}
+    .impact {
+        grid-row: 3;
+        grid-column: 1/span 2;
+        height: 30px;
+        width: 70%;
+    }
 
-.switch-btn {
-    grid-row: 1;
-    grid-column: 5;
-}
+    .fill-color {
+        grid-row: 2;
+        grid-column: 6;
+        font-size: 10px;
+    }
 
-.impact {
-    grid-row: 3;
-    grid-column: 1/span 2;
-    height: 30px;
-    width: 70%;
-}
+    .border-color {
+        grid-row: 2;
+        grid-column: 7;
+        font-size: 10px;
+    }
 
-.fill-color {
-    grid-row: 2;
-    grid-column: 6;
-    font-size: 10px;
-}
+    .font-size-plus {
+        grid-row: 2;
+        grid-column: 1;
+    }
 
-.border-color {
-    grid-row: 2;
-    grid-column: 7;
-    font-size: 10px;
-}
+    .font-size-minus {
+        grid-row: 2;
+        grid-column: 2;
+    }
 
-.font-size-plus {
-    grid-row: 2;
-    grid-column: 1;
-}
+    .align-left {
+        grid-row: 2;
+        grid-column: 5;
+    }
 
-.font-size-minus {
-    grid-row: 2;
-    grid-column: 2;
-}
+    .align-center {
+        grid-row: 2;
+        grid-column: 4;
+    }
 
-.align-left {
-    grid-row: 2;
-    grid-column: 5;
-}
+    .align-right {
+        grid-row: 2;
+        grid-column: 3;
+    }
 
-.align-center {
-    grid-row: 2;
-    grid-column: 4;
-}
-
-.align-right {
-    grid-row: 2;
-    grid-column: 3;
-}
-
-.download-btn {
-    width: 50px;
-    height: 30px;
-    grid-row: 3;
-    grid-column: 4;
-    border-radius: 20px;
-}
+    .download-btn {
+        width: 50px;
+        height: 30px;
+        grid-row: 3;
+        grid-column: 4;
+        border-radius: 20px;
+    }
 
 
 }

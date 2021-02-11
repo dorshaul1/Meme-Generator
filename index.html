@@ -12,15 +12,17 @@
     <header class="flex">
         <div class="logo" onclick="navToGallery()">Meme Generator</div>
         <nav>
-            <ul class="flex clean-list space-between">
-                <li class="gallery" onclick="navToGallery()">Gallery</li>
-                <li>Memes</li>
-                <li>About</li>
+            <ul class="nav-list flex clean-list space-between">
+                <li class="gallery center" onclick="navToGallery()">Gallery</li>
+                <li class="center">Memes</li>
+                <li class="center">About</li>
             </ul>
         </nav>
+        <button class="burger-menu" onclick="openSideNav()">☰</button>
     </header>
-
+    
     <main>
+        <div class="nav-screen" onclick=" closeSideNav()"></div>
 
         <section class="meme-editor-container flex align-center space-around hidden hidden-childs">
             <div class="canvas-container">

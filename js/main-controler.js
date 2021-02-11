@@ -118,6 +118,21 @@ function downloadCanvas(elLink) {
     elLink.download = 'canvas.png'
 }
 
+function openSideNav(){
+    let elScreen = document.querySelector('.nav-screen')
+    let elNav = document.querySelector('.nav-list')
+    elScreen.style.display='block'
+    elNav.classList.add('openNav')
+}
+
+function closeSideNav(){
+    let elScreen = document.querySelector('.nav-screen')
+    let elNav = document.querySelector('.nav-list')
+    elScreen.style.display='none'
+    elNav.classList.remove('openNav')
+
+}
+
 //canvas
 
 function clearCanvas() {
