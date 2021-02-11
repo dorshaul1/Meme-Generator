@@ -13,6 +13,7 @@ function onInit() {
     enableEnter()
     drawImg()
     clearCanvas()
+    
 }
 
 function enableEnter() {
@@ -56,12 +57,12 @@ function choosenImage(el) {
     // onInit()
 }
 
-
 function showMemeEditor(el) {
     document.querySelector('.gallery-container').classList.add('hidden')
     document.querySelector('.meme-editor-container').classList.remove('hidden')
     document.querySelector('.meme-editor-container').classList.remove('hidden-childs')
     choosenImage(el)
+    createMeme(el.id)
 }
 
 function navToGallery() {
@@ -87,6 +88,10 @@ function chooseTextAlign(el){
     else if (el.classList.contains('align-center')) gTextAlign = 'center';
     else if (el.classList.contains('align-right')) gTextAlign = 'right';
 }
+
+// function onDeleteLine(){
+//     deleteLine()
+// }
 
 //canvas
 
