@@ -111,6 +111,7 @@ function drawImg() {
 
 function drawText() {
     let meme = getMeme()
+    if (!meme) return
     meme.lines.forEach((line) => {
         if (line.textAlign === '') line.textAlign = 'center'
 		gCtx.lineWidth = 2;
@@ -118,7 +119,7 @@ function drawText() {
 		gCtx.fillStyle = line.fillColor;
 		gCtx.font = '40px Arial';
 		gCtx.textAlign = line.textAlign;
-		gCtx.fillText(line.txt, gElCanvas.width/2, gElCanvas.height-350);
-		gCtx.strokeText(line.txt, gElCanvas.width/2, gElCanvas.height-350);
+		gCtx.fillText(line.txt, 200, gElCanvas.height-350);
+		gCtx.strokeText(line.txt, 200, gElCanvas.height-350);
 	});
 }
