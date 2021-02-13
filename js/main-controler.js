@@ -24,20 +24,20 @@ function onInputText() {
     drawImg()
     setTimeout(function () {
         // MarkText()
-        
+
         elTextInput.value = ''
 
         currLine.txt = text
 
         currLine.isMarked = false
         // if (!meme.lines.length) {
-            
-            // deleteLine()
-            drawText()
-            // }
-            // renderText()
+
+        // deleteLine()
+        drawText()
+        // }
+        // renderText()
     }, 2)
-    
+
 }
 
 function onAddLine() {
@@ -45,20 +45,18 @@ function onAddLine() {
     if (!meme) return
     if (meme.selectedLineIdx === 0) {
         addLine('', gElCanvas.height - 200, gElCanvas.height - 350)
-    }
-    
-    else if (meme.selectedLineIdx === 1) {
+    } else if (meme.selectedLineIdx === 1) {
         addLine('', gElCanvas.height - 200, gElCanvas.height - 20)
-        
+
     } else meme.selectedLineIdx = 0
-    
+
     meme.selectedLineIdx++
 
     setTimeout(function () {
 
-    MarkText()
+        MarkText()
 
-}, 2)
+    }, 2)
 
     // drawImg()
     drawText()
@@ -93,12 +91,16 @@ function onClickCanvas(ev) {
     } = ev
     console.log('canvasClicked -> offsetX', offsetX)
     console.log('canvasClicked -> offsetY', offsetY)
-    // var clickedStar = gStars.find(star => {
-    //     return offsetX > star.x
-    //         && offsetX < star.x + gBarWidth
-    //         && offsetY > star.y 
-    //         && offsetY < gCanvas.height
+    // var clickedLine = getMeme().lines.find(line => {
+    //     return offsetX > line.posX &&
+    //         offsetX < gElCanvas.width &&
+    //         offsetX > gElCanvas.width &&
+    //         offsetX < line.posX &&
+    //         offsetY > line.posY - 10 &&
+    //         offsetY < line.posY + 10
     // })
+
+    // console.log('clickedLine:', clickedLine)
 }
 
 
@@ -217,9 +219,9 @@ function switchLines() {
     drawImg()
 
     setTimeout(function () {
-    drawText()
-    MarkText()
-   }, 0.1)
+        drawText()
+        MarkText()
+    }, 0.1)
 }
 
 function renderText() {
