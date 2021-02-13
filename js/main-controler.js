@@ -17,9 +17,7 @@ function onInit() {
 
 function enableEnter() {
     var input = document.getElementById('text');
-    // console.log('input:', input)
     input.addEventListener("keyup", function (event) {
-        console.log('event:', event)
         if (event.key === 13) {
             event.preventDefault();
             document.getElementById('submit-btn').click();
@@ -34,21 +32,13 @@ function onInputText() {
     let meme = getMeme()
     if (!meme) return
     let currLine = meme.lines[meme.selectedLineIdx - 1]
-    // renderCanvas()
     drawImg()
-    setTimeout(function () {
-        // MarkText()
-        
+    setTimeout(function () {        
         
         currLine.txt = text
         
         currLine.isMarked = false
-        // if (!meme.lines.length) {
-            
-            // deleteLine()
             drawText()
-            // }
-            // renderText()
         }, 2)
         
     }
@@ -73,10 +63,7 @@ function onInputText() {
 
         }, 2)
 
-        // drawImg()
         drawText()
-    // renderText()
-    // renderCanvas()
 }
 
 function MarkText() {
@@ -230,7 +217,6 @@ function switchLines() {
     else if (meme.selectedLineIdx === 2) {
         meme.selectedLineIdx = 1;
     }
-    // drawImage()
     drawImg()
 
     setTimeout(function () {
@@ -244,18 +230,6 @@ function renderText() {
         drawText();
     });
 }
-
-// function renderText() {
-//     let meme = getMeme()
-//     let currLineIdx = meme.selectedLineIdx;
-//     meme.lines.forEach((line, idx) => {
-//         console.log('idx:', idx)
-//         // if (meme.lines === 0) return
-//         drawText()
-//         meme.selectedLineIdx = idx;
-//     })
-//     meme.selectedLineIdx = currLineIdx
-// }
 
 function renderCanvas() {
     drawImg()
@@ -288,23 +262,6 @@ function drawImg() {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     }
 }
-
-// function drawText() {
-//     let meme = getMeme()
-//     if (!meme) return
-
-//     var currLine = meme.lines[meme.selectedLineIdx - 1]
-
-//     if (currLine.textAlign === '') currLine.textAlign = 'center'
-//     if (currLine.fontSize === '') currLine.textAlign = '40'
-//     gCtx.lineWidth = 2;
-//     gCtx.strokeStyle = currLine.borderColor;
-//     gCtx.fillStyle = currLine.fillColor;
-//     gCtx.font = `${currLine.fontSize}px ${currLine.font}`;
-//     gCtx.textAlign = currLine.textAlign;
-//     gCtx.fillText(currLine.txt, currLine.posX, currLine.posY);
-//     gCtx.strokeText(currLine.txt, currLine.posX, currLine.posY);
-// }
 
 function drawText() {
     let meme = getMeme()
