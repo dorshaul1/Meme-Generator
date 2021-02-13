@@ -141,7 +141,7 @@ function onChooseFillColor() {
     changeFillColor(selectedFillColor)
     setTimeout(function () {
         renderText()
-    }, 0.2)
+    }, 0.1)
 }
 
 function onChooseBorderColor() {
@@ -149,7 +149,7 @@ function onChooseBorderColor() {
     changeBorderColor(selectedBorderColor)
     setTimeout(function () {
         renderText()
-    }, 0.2)
+    }, 0.1)
 }
 
 function chooseTextAlign(el) {
@@ -237,7 +237,7 @@ function renderCanvas() {
     drawImg()
     setTimeout(function () {
         renderText()
-    }, 0.2)
+    }, 0.1)
 }
 
 function onUp() {
