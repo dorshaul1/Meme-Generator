@@ -65,7 +65,7 @@ function createImagesGallery() {
 function deleteLine() {
     if (gMeme.lines.length === 0) return
     gMeme.lines.splice([gMeme.selectedLineIdx-1], 1)
-    // gMeme.selectedLineIdx = 0
+    gMeme.selectedLineIdx = 0
 }
 
 function changeFillColor(color) {

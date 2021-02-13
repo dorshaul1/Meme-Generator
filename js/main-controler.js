@@ -77,6 +77,7 @@ function MarkTextPosition(x, y) {
     let currLine = meme.lines[meme.selectedLineIdx - 1]
     gCtx.beginPath()
     gCtx.rect(x, y, gElCanvas.width - 40, currLine.fontSize + 20)
+    gCtx.strokeStyle = 'red'
     gCtx.stroke()
 }
 
