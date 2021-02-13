@@ -26,36 +26,41 @@
 
         <section class="meme-editor-container flex align-center space-around hidden hidden-childs">
             <div class="canvas-container">
-                <canvas id="meme-canvas" width="400" height="400" style="outline:1px solid black"></canvas>
+                <canvas id="meme-canvas" width="400" height="400" style="outline:1px solid black" onclick="onClickCanvas(event)"></canvas>
             </div>
-            <div class="meme-settings grid">
-                <input class="text grid-center" id="text" type="text" placeholder="Enter Text" >
-                <button id="delete-btn" class="delete-btn grid-center"><img src="icons/trash.png" onclick="onDeleteLine()"></button>
-                <button id="switch-btn" class="switch-btn grid-center"><img src="icons/up-and-down-opposite-double-arrows-side-by-side.png"></button>
-                <button id="text-btn" class="add-text grid-center" onclick="onInputText()"><img src="icons/add.png"></button>
 
-                <button class="font-size-minus grid-center" id="minus" onclick="encreaseFontSize(this)"><img src="icons/decrease font - icon.png"></button>
-                <button class="font-size-plus grid-center" id="plus" onclick="encreaseFontSize(this)"><img src="icons/increase font - icon.png"></button>
+            <div class="meme-settings grid">
+                
+                <input class="text grid-center" id="text" type="text" placeholder="Enter Text">
+                <button id="delete-btn" class="delete-btn grid-center"><img src="icons/trash.png" onclick="onDeleteLine()"></button>
+                <button id="switch-btn" class="switch-btn grid-center"><img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLines()"></button>
+                <button id="submit-btn" class="add-text grid-center"><img src="icons/enter.png" onclick="onInputText()"></button>
+                <button id="text-btn" class="add-line grid-center" onclick="onAddLine()"><img src="icons/add.png"></button>
+                
+                <button class="font-size-minus grid-center" id="minus" onclick="onChangeFontSize(this)"><img src="icons/decrease font - icon.png"></button>
+                <button class="font-size-plus grid-center" id="plus" onclick="onChangeFontSize(this)"><img src="icons/increase font - icon.png"></button>
                 <button class="align align-left grid-center" onclick="chooseTextAlign(this)"><img src="icons/align-to-right.png"></button>
                 <button class="align align-center grid-center" onclick="chooseTextAlign(this)"><img src="icons/center-text-alignment.png"></button>
                 <button class="align align-right grid-center" onclick="chooseTextAlign(this)"><img src="icons/align-to-left.png"></button>
-
-                <select id="impact" class="impact grid-center">
+                
+                <select id="impact" class="impact grid-center" onclick="chooseFont()">
                     <option value="ariel">Arial</option>
                     <option value="italic">italic</option>
                 </select>
-                <div class="fill-color grid-center">
-                    <h4>Fill color</h4>
+                <div class="fill-color grid-center" oninput="onChooseFillColor()">
+                    <div class="flex center"><img src="icons/paint-board-and-brush.png"></div>
                     <input type="color" id="fill-color">
                 </div>
-                <div class="border-color grid-center">
-                    <h4>Border color</h4>
+                <div class="border-color grid-center" oninput="onChooseBorderColor()">
+                    <div class="flex center"><img src="icons/text stroke.png"></div>
                     <input type="color" id="border-color">
                 </div>
                 <div class="download-btn grid-center">
                     <a href="#" class="download-btn grid-center" onclick="downloadCanvas(this)" download=""><img src="icons/direct-download.svg" alt=""></a>
-
+                    
                 </div>
+                <button class="btn-up grid-center" onclick="onUp()"><img src="icons/up-arrow.png"></button>
+                <button class="btn-down grid-center" onclick="onDown()"><img src="icons/down-arrow.png"></button>
             </div>
         </section>
 
