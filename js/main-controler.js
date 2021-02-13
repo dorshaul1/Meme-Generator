@@ -213,6 +213,13 @@ function switchLines() {
     else if (meme.selectedLineIdx === 2) {
         meme.selectedLineIdx = 1;
     }
+    // drawImage()
+    drawImg()
+
+    setTimeout(function () {
+    drawText()
+    MarkText()
+   }, 0.1)
 }
 
 function renderText() {
