@@ -13,10 +13,22 @@ function onInit() {
     renderGalleryImages()
 }
 
+function enableEnter() {
+    var input = document.getElementById('text');
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            console.log('event:', event)
+            // onInputText()
+            document.getElementById('submit-btn').click();
+        }
+    });
+}
+
 function onInputText() {
     let elTextInput = document.getElementById('text')
     let text = elTextInput.value
-
+    
     let meme = getMeme()
     if (!meme) return
     let currLine = meme.lines[meme.selectedLineIdx - 1]
@@ -24,42 +36,43 @@ function onInputText() {
     drawImg()
     setTimeout(function () {
         // MarkText()
-
-        elTextInput.value = ''
-
+        
+        
         currLine.txt = text
-
+        
         currLine.isMarked = false
         // if (!meme.lines.length) {
+            
+            // deleteLine()
+            drawText()
+            // }
+            // renderText()
+        }, 2)
+        
+    }
+    
+    function onAddLine() {
+        let elTextInput = document.getElementById('text')
+        let meme = getMeme()
+        if (!meme) return
+        if (meme.selectedLineIdx === 0) {
+            addLine('', gElCanvas.height - 200, gElCanvas.height - 350)
+        } else if (meme.selectedLineIdx === 1) {
+            addLine('', gElCanvas.height - 200, gElCanvas.height - 20)
+        
+        } else meme.selectedLineIdx = 0
+    
+        meme.selectedLineIdx++
+        elTextInput.value = ''
+        
+        setTimeout(function () {
+            
+            MarkText()
 
-        // deleteLine()
+        }, 2)
+
+        // drawImg()
         drawText()
-        // }
-        // renderText()
-    }, 2)
-
-}
-
-function onAddLine() {
-    let meme = getMeme()
-    if (!meme) return
-    if (meme.selectedLineIdx === 0) {
-        addLine('', gElCanvas.height - 200, gElCanvas.height - 350)
-    } else if (meme.selectedLineIdx === 1) {
-        addLine('', gElCanvas.height - 200, gElCanvas.height - 20)
-
-    } else meme.selectedLineIdx = 0
-
-    meme.selectedLineIdx++
-
-    setTimeout(function () {
-
-        MarkText()
-
-    }, 2)
-
-    // drawImg()
-    drawText()
     // renderText()
     // renderCanvas()
 }
