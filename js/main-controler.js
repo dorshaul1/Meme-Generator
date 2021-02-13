@@ -11,15 +11,17 @@ function onInit() {
     gElCanvas = document.getElementById('meme-canvas')
     gCtx = gElCanvas.getContext('2d')
     renderGalleryImages()
+    enableEnter()
 }
+
 
 function enableEnter() {
     var input = document.getElementById('text');
+    // console.log('input:', input)
     input.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
+        console.log('event:', event)
+        if (event.key === 13) {
             event.preventDefault();
-            console.log('event:', event)
-            // onInputText()
             document.getElementById('submit-btn').click();
         }
     });
