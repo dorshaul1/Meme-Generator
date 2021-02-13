@@ -265,7 +265,7 @@ function drawImg() {
 
 function drawText() {
     let meme = getMeme()
-    meme.lines.forEach((line, idx) => {
+    meme.lines.forEach((line) => {
 
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = line.borderColor
