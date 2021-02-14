@@ -37,7 +37,9 @@ function addLine(txt, x = 200, y = gElCanvas.height - 350, ) {
         font: 'arial',
         posX: x,
         posY: y,
-        isMarked: false
+        isActive: false,
+        textSize: 0,
+        isDragging: false
     }
     gMeme.lines.push(newLine)
 }
@@ -63,9 +65,10 @@ function createImagesGallery() {
 }
 
 function deleteLine() {
-    if (gMeme.lines.length === 0) return
-    gMeme.lines.splice([gMeme.selectedLineIdx-1], 1)
-    gMeme.selectedLineIdx = 0
+    let currLine = (gMeme.selectedLineIdx) - 1
+    if (currLine !== 0 && (!currLine)) return
+    gMeme.lines.splice(currLine, 1)
+    currLine = 0;
 }
 
 function changeFillColor(color) {
@@ -88,12 +91,20 @@ function textDown() {
     gMeme.lines[gMeme.selectedLineIdx - 1].posY += 5
 }
 
-function ChangeFontSize(value) {
+function textRight() {
     if (gMeme.lines.length === 0) return
-    if (value === 'minus')
-        gMeme.lines[gMeme.selectedLineIdx - 1].fontSize -= 5
-    else if (value === 'plus')
-        gMeme.lines[gMeme.selectedLineIdx - 1].fontSize += 5
+    gMeme.lines[gMeme.selectedLineIdx - 1].posX -= 5
+}
+
+function textLeft() {
+    if (gMeme.lines.length === 0) return
+    gMeme.lines[gMeme.selectedLineIdx - 1].posX += 5
+}
+
+
+function ChangeFontSize(value){
+    if (gMeme.lines.length === 0) return
+    gMeme.lines[gMeme.selectedLineIdx - 1].fontSize = value
 }
 
 function changeTextAlign(value) {
@@ -106,7 +117,7 @@ function changeTextAlign(value) {
         gMeme.lines[gMeme.selectedLineIdx - 1].textAlign = 'right'
 }
 
-function ChangeFont(value){
+function ChangeFont(value) {
     if (gMeme.lines.length === 0) return
     gMeme.lines[gMeme.selectedLineIdx - 1].font = value
 }

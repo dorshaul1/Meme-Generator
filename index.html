@@ -20,52 +20,88 @@
         </nav>
         <button class="burger-menu" onclick="openSideNav()">☰</button>
     </header>
-    
+
     <main>
         <div class="nav-screen" onclick=" closeSideNav()"></div>
 
         <section class="meme-editor-container flex align-center space-around hidden hidden-childs">
             <div class="canvas-container">
-                <canvas id="meme-canvas" width="400" height="400" style="outline:1px solid black" onclick="onClickCanvas(event)"></canvas>
+                <canvas id="meme-canvas" width="400" height="400" style="outline:1px solid black"></canvas>
             </div>
 
-            <div class="meme-settings grid">
-                
-                <input class="text grid-center" id="text" type="text" placeholder="Enter Text" oninput="onInputText()">
-                <button id="delete-btn" class="delete-btn grid-center"><img src="icons/trash.png" onclick="onDeleteLine()"></button>
-                <button id="switch-btn" class="switch-btn grid-center"><img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLines()"></button>
-                <button id="submit-btn" class="add-text grid-center"><img src="icons/enter.png" onclick="onInputText()"></button>
-                <button id="text-btn" class="add-line grid-center" onclick="onAddLine()"><img src="icons/add.png"></button>
-                
-                <button class="font-size-minus grid-center" id="minus" onclick="onChangeFontSize(this)"><img src="icons/decrease font - icon.png"></button>
-                <button class="font-size-plus grid-center" id="plus" onclick="onChangeFontSize(this)"><img src="icons/increase font - icon.png"></button>
-                <button class="align align-left grid-center" onclick="chooseTextAlign(this)"><img src="icons/align-to-right.png"></button>
-                <button class="align align-center grid-center" onclick="chooseTextAlign(this)"><img src="icons/center-text-alignment.png"></button>
-                <button class="align align-right grid-center" onclick="chooseTextAlign(this)"><img src="icons/align-to-left.png"></button>
-                
-                <select id="impact" class="impact grid-center" onclick="chooseFont()">
-                    <option value="Arial">Arial</option>
-                    <option value="Arial Black">Arial Bold</option>
-                    <option value="Times">Times</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Comic Sans MS">Comic Sans MS</option>
-                    <option value="Brush script mt">Brush script mt</option>
-                    <option value="Algerian">Algerian</option>
-                </select>
-                <div class="fill-color grid-center" oninput="onChooseFillColor()">
-                    <div class="flex center"><img src="icons/paint-board-and-brush.png"></div>
-                    <input type="color" id="fill-color">
+            <div class="meme-settings flex column">
+
+                <div class="text-actions-container grid">
+                    <input class="text grid-center" id="text" type="text" placeholder="Enter Text"
+                        oninput="onInputText()">
+                    <button id="delete-btn" class="delete-btn grid-center"><img src="icons/trash.png"
+                            onclick="onDeleteLine()"></button>
+                    <button id="switch-btn" class="switch-btn grid-center"><img
+                            src="icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                            onclick="switchLines()"></button>
+                    <!-- <button id="submit-btn" class="add-text grid-center"><img src="icons/enter.png" onclick="onInputText()"></button> -->
+                    <button id="text-btn" class="add-line grid-center" onclick="onAddLine()"><img
+                            src="icons/add.png"></button>
                 </div>
-                <div class="border-color grid-center" oninput="onChooseBorderColor()">
-                    <div class="flex center"><img src="icons/text stroke.png"></div>
-                    <input type="color" id="border-color">
+
+                <!-- <button class="font-size-minus grid-center" id="minus" onclick="onChangeFontSize(this)"><img src="icons/decrease font - icon.png"></button> -->
+                <!-- <button class="font-size-plus grid-center" id="plus" onclick="onChangeFontSize(this)"><img src="icons/increase font - icon.png"></button> -->
+
+
+                <div class="text-changing-inline grid center-self">
+
+                    <input class="fontSize grid-center" type="range" id="fontSize" name="fontSize" min="10" max="150"
+                        oninput="onChangeFontSize()">
+                    <button class="align align-left grid-center" onclick="chooseTextAlign(this)"><img
+                            src="icons/align-to-right.png"></button>
+                    <button class="align align-center grid-center" onclick="chooseTextAlign(this)"><img
+                            src="icons/center-text-alignment.png"></button>
+                    <button class="align align-right grid-center" onclick="chooseTextAlign(this)"><img
+                            src="icons/align-to-left.png"></button>
+
+                    <select id="impact" class="impact grid-center" onclick="chooseFont()">
+                        <option value="Arial">Arial</option>
+                        <option value="Arial Black">Arial Bold</option>
+                        <option value="Times">Times</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Brush script mt">Brush script mt</option>
+                        <option value="Algerian">Algerian</option>
+                    </select>
+
+                    <div class="colors-container flex center-self center">
+                        <!-- <form action=""> -->
+
+                        <label for="fill-color" class="fill-color grid-center" oninput="onChooseFillColor()">
+                            <img src="icons/paint-board-and-brush.png">
+                        </label>
+                        <input type="color" id="fill-color" hidden>
+                        <label for="border-color" class="border-color grid-center" oninput="onChooseFillColor()">
+                            <img src="icons/text stroke.png">
+                        </label>
+                        <input type="color" id="border-color" hidden>
+                        <!-- </form> -->
+                    </div>
                 </div>
-                <div class="download-btn grid-center">
-                    <a href="#" class="download-btn grid-center" onclick="downloadCanvas(this)" download=""><img src="icons/direct-download.svg" alt=""></a>
-                    
+
+
+
+
+                <div class="bottom grid center-self">
+
+                    <div class="arrows-container flex center">
+                        <button class="btn-up grid-center" onclick="onUp()"><img src="icons/up-arrow.png"></button>
+                        <button class="btn-down grid-center" onclick="onDown()"><img
+                                src="icons/down-arrow.png"></button>
+                        <button class="btn-right grid-center" onclick="onRight()"><img src="icons/right-arrow.png"></button>
+                        <button class="btn-left grid-center" onclick="onLeft()"><img src="icons/left-arrow.png"></button>
+                    </div>
+                    <div class="download-btn grid-center">
+                        <a href="#" class="download-btn grid-center" onclick="downloadCanvas(this)" download=""><img
+                                src="icons/direct-download.svg" alt=""></a>
+
+                    </div>
                 </div>
-                <button class="btn-up grid-center" onclick="onUp()"><img src="icons/up-arrow.png"></button>
-                <button class="btn-down grid-center" onclick="onDown()"><img src="icons/down-arrow.png"></button>
             </div>
         </section>
 
@@ -77,8 +113,6 @@
     <script src="js/utils.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/main-service.js"></script>
-    <script src="js/canvas-services.js"></script>
-    <script src="js/canvas-controler.js"></script>
     <script src="js/main-controler.js"></script>
 </body>
 
